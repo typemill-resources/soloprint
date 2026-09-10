@@ -1,0 +1,15 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Page not found — {{ settings.title | e }}{% endblock %}
+
+{% block content %}
+
+<main class="stage mw7 center ph3 pt6 pb5 tc" id="main">
+	<h1 class="mt0 mb4">Page not found</h1>
+	<p class="tagline f4 lh-copy ink-soft measure center mt0 mb5">Sorry, but the page you are looking for does not exist.</p>
+	<div class="actions flex justify-center items-center flex-wrap gap3">
+		<a class="btn btn-primary dib f6 ph4 pv3 ink-bg paper-bg" href="{{ home_url | e('html_attr') }}">Back home</a>
+	</div>
+</main>
+
+{% endblock %}

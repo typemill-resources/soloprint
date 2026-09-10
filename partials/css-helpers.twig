@@ -1,0 +1,4 @@
+{# Helpers for safely emitting theme-controlled CSS values. #}
+{% macro color(value, fallback) %}{% if value matches '/^#([0-9a-fA-F]{3}){1,2}$/' %}{{ value }}{% else %}{{ fallback }}{% endif %}{% endmacro %}
+
+{% macro fontstack(value, fallback) %}{% if value matches '/^[\\w\\s\\-\'" ,]+$/' %}{{ value }}{% else %}{{ fallback }}{% endif %}{% endmacro %}

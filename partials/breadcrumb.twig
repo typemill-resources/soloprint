@@ -1,0 +1,20 @@
+{% if theme.breadcrumb %}
+	<nav class="w-100 f6 pt0 pb4 relative" aria-label="Breadcrumb">
+		<ol class="breadcrumb-list ma0 pa0 mw6">
+			<li class="breadcrumb-item dib">
+				<a class="link f-link underline-hover" href="{{ home_url | e('html_attr') }}">{{ settings.title|e }}</a>
+			</li>
+
+			{% for crumb in breadcrumb %}
+				<li class="breadcrumb-item dib">
+					<span class="breadcrumb-separator" aria-hidden="true"> &#x203A; </span>
+					{% if loop.last %}
+						<span aria-current="page">{{ crumb.name|e }}</span>
+					{% else %}
+						<a class="link f-link underline-hover" href="{{ crumb.urlRel | e('html_attr') }}">{{ crumb.name|e }}</a>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ol>
+	</nav>
+{% endif %}

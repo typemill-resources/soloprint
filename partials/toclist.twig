@@ -1,0 +1,25 @@
+{% macro render(navigation, depth = 0, limit = 10, numbered = false, showmeta = false) %}
+	{% import _self as macros %}
+
+	{% if limit > depth %}
+		<ul class="toc-list ma0 pa0">
+			{% for element in navigation %}
+				<li class="toc-item{% if element.active %} current{% endif %}">
+					<a class="toc-link level-{{depth}} flex items-baseline gap2 no-underline pv3 f5" href="{{ element.urlAbs | e('html_attr') }}" style="padding-left: {{ depth * 1.25 }}rem;"{% if element.active %} aria-current="page"{% endif %}>
+						{% if numbered and depth == 0 %}
+							<span class="toc-num flex-none">{{ '%02d'|format(loop.index) }}</span>
+						{% endif %}
+						<span class="toc-title flex-auto">{{ element.name | e }}</span>
+						{% if showmeta and element.elementType == 'folder' and element.folderContent|length > 0 %}
+							<span class="toc-meta f7 ink-soft flex-none">{{ element.folderContent|length }} items</span>
+						{% endif %}
+					</a>
+					{% if element.folderContent|length > 0 %}
+						{{ macros.render(element.folderContent, depth + 1, limit, numbered, showmeta) }}
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+{% endmacro %}

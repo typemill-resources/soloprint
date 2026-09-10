@@ -1,0 +1,29 @@
+{% import 'partials/toclist.twig' as toclist %}
+
+{% set chapterCount = navigation|length %}
+{% set startHref = theme.startButtonLink|default((navigation|first).urlAbs|default('#contents')) %}
+
+<main class="stage mw7 center ph3 pt6 pb5 tc" id="main">
+	<p class="kicker f5 i ink-soft mt0 mb4">{{ theme.kicker|default('') | e }}</p>
+	<h1 class="mt0 mb4">{{ theme.title | default(settings.title) | e }}</h1>
+	<p class="tagline f4 lh-copy ink-soft measure center mt0 mb5">{{ theme.tagline|default(meta.description|default('')) | e }}</p>
+
+	<div class="actions flex justify-center items-center flex-wrap gap3">
+		<a class="btn btn-primary dib f6 ph4 pv3 ink-bg paper-bg no-underline" href="{{ startHref | e('html_attr') }}">{{ theme.startButtonLabel|default('Start reading') | e }}</a>
+		{% if theme.secondButtonLabel %}
+			<a class="btn btn-quiet dib f6 ph4 pv3 ink-soft no-underline" href="{{ theme.secondButtonLink|default(home_url ~ '#order') | e('html_attr') }}">{{ theme.secondButtonLabel|default('Order the book') | e }}</a>
+		{% endif %}
+	</div>
+
+	{% if theme.authorName %}
+		<p class="byline mt5 f6 ink-soft">{{ theme.authorLabel|default('Written by') | e }} <span class="name">{{ theme.authorName | e }}</span></p>
+	{% endif %}
+</main>
+
+<section class="contents mw6 center ph3 pb6" id="contents" aria-labelledby="contents-heading">
+	<div class="contents-head flex items-baseline justify-between pt4 mb2">
+		<h2 class="font-serif fw5 f4 ma0" id="contents-heading">{{ theme.contents | default('Contents') | e }}</h2>
+		<span class="f7 ink-soft">{{ chapterCount }} chapter{% if chapterCount != 1 %}s{% endif %}</span>
+	</div>
+	{{ toclist.render(navigation, 0, 1, true, true) }}
+</section>

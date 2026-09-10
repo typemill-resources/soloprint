@@ -1,0 +1,10 @@
+<footer class="strip footer-strip rule-top ph3 pv5" id="order">
+	<div class="strip-inner mw7 center flex items-center justify-between flex-wrap gap3">
+		<p class="ma0 f6">{{ theme.footerLine|default('Also available as a printed edition.') | e }}</p>
+		<div class="links flex gap4 f6">
+			{% if theme.footerLink1Label %}<a href="{{ theme.footerLink1Url|default('#') | e('html_attr') }}">{{ theme.footerLink1Label | e }}</a>{% endif %}
+			{% if theme.footerLink2Label %}<a href="{{ theme.footerLink2Url|default('#') | e('html_attr') }}">{{ theme.footerLink2Label | e }}</a>{% endif %}
+			{% if theme.footerLink3Label %}<a href="{{ theme.footerLink3Url|default('#') | e('html_attr') }}">{{ theme.footerLink3Label | e }}</a>{% endif %}
+		</div>
+	</div>
+</footer>

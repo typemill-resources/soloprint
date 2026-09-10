@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{ settings.langattr | default('en') | e('html_attr') }}" data-theme="light">
+<head>
+	<script>
+		(function() {
+			var stored = localStorage.getItem('soloprint-theme');
+			if (stored === 'dark' || stored === 'light') {
+				document.documentElement.setAttribute('data-theme', stored);
+			}
+		})();
+	</script>
+	<meta charset="UTF-8">
+	<title>{% block title %}{{ settings.title | e }}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<meta name="description" content="{{ metatabs.meta.description|default('')|e('html_attr') }}" />
+	<meta name="author" content="{{ metatabs.meta.author|default(settings.author)|e('html_attr') }}" />
+	<link rel="canonical" href="{{ item.urlAbs|default(home_url)|e('html_attr') }}" />
+
+	<!-- Render all other meta-tags from the system and from plugins -->
+	{{ assets.renderMeta() }}
+
+	{% block stylesheets %}
+		{% import 'partials/css-helpers.twig' as css %}
+		<style>
+			:root {
+				--paper: {{ css.color(theme.paper, '#f5f3ec') }};
+				--paper-raised: {{ css.color(theme.paperRaised, '#ebe7da') }};
+				--card-bg: {{ css.color(theme.cardBg, '#fefdfa') }};
+				--ink: {{ css.color(theme.ink, '#21211c') }};
+				--ink-soft: {{ css.color(theme.inkSoft, '#6b6a5f') }};
+				--accent: {{ css.color(theme.accent, '#3c5a45') }};
+				--line: {{ css.color(theme.line, '#8d8877') }};
+				--card-line: {{ css.color(theme.cardLine, '#98927f') }};
+				--band-bg: {{ css.color(theme.bandBg, '#21211c') }};
+				--band-fg: {{ css.color(theme.bandFg, '#f5f3ec') }};
+				--serif: {{ css.fontstack(theme.serifFont, "Georgia, Cambria, 'Times New Roman', Times, serif") }};
+				--sans: {{ css.fontstack(theme.sansFont, "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif") }};
+				--max: 920px;
+				--content: 640px;
+			}
+
+			[data-theme="dark"] {
+				--paper: {{ css.color(theme.paperDark, '#1a1a17') }};
+				--paper-raised: {{ css.color(theme.paperRaisedDark, '#242420') }};
+				--card-bg: {{ css.color(theme.cardBgDark, '#20201c') }};
+				--ink: {{ css.color(theme.inkDark, '#e8e6df') }};
+				--ink-soft: {{ css.color(theme.inkSoftDark, '#99968a') }};
+				--accent: {{ css.color(theme.accentDark, '#7ab889') }};
+				--line: {{ css.color(theme.lineDark, '#6f6f64') }};
+				--card-line: {{ css.color(theme.cardLineDark, '#6f6f64') }};
+				--band-bg: {{ css.color(theme.bandBgDark, '#e8e6df') }};
+				--band-fg: {{ css.color(theme.bandFgDark, '#1a1a17') }};
+			}
+		</style>
+
+		<link rel="stylesheet" href="{{ base_url | e('html_attr') }}/themes/soloprint/css/tachyons.min.css">
+		<link rel="stylesheet" href="{{ base_url | e('html_attr') }}/themes/soloprint/css/style.css" />
+
+		<!-- Render all other stylesheets from the system and from plugins -->
+		{{ assets.renderCSS() }}
+	{% endblock %}
+</head>
+<body class="ma0 lh-copy">
+
+	<a href="#main" class="skip-link">Skip to main content</a>
+
+	{% block content %}{% endblock %}
+
+	{% include 'partials/footer.twig' %}
+
+	{% block javascripts %}
+		<script src="{{ base_url | e('html_attr') }}/themes/soloprint/js/script.js"></script>
+		{{ assets.renderJS() }}
+	{% endblock %}
+
+</body>
+</html>

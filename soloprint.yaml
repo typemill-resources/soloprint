@@ -1,0 +1,448 @@
+name: Soloprint
+version: 1.0.0
+description: 'Soloprint is a minimal, book-like theme for a single publication.'
+author: Typemill
+homepage: https://typemill.net
+license: MAKER
+
+settings:
+  # Landing page copy
+  kicker: 'A short field guide'
+  title: 'Typemill'
+  tagline: 'Six essays on doing fewer things, at a pace that lets you notice what you are doing.'
+  startButtonLabel: 'Start reading'
+  startButtonLink: ''
+  secondButtonLabel: 'Order the book'
+  secondButtonLink: '#order'
+  authorLabel: 'Written by'
+  authorName: 'John'
+
+  # Elements
+  headerbutton: true
+  headerbuttonLabel: 'Order'
+  headerbuttonLink: '#order'
+  bottompager: true
+  darkmodebutton: true
+
+  # Edition footer strip
+  footerLine: 'Also available as a printed edition, $22.'
+  footerLink1Label: 'Download PDF'
+  footerLink1Url: '#'
+  footerLink2Label: 'Download ePub'
+  footerLink2Url: '#'
+  footerLink3Label: 'Order print'
+  footerLink3Url: '#'
+
+  # Colors (configured below in forms)
+  paper: '#f5f3ec'
+  paperRaised: '#ebe7da'
+  cardBg: '#fefdfa'
+  ink: '#21211c'
+  inkSoft: '#6b6a5f'
+  accent: '#3c5a45'
+  line: '#8d8877'
+  cardLine: '#F2F2F2'
+  bandBg: '#21211c'
+  bandFg: '#f5f3ec'
+
+  # Dark mode colors
+  paperDark: '#1a1a17'
+  paperRaisedDark: '#242420'
+  cardBgDark: '#20201c'
+  inkDark: '#e8e6df'
+  inkSoftDark: '#99968a'
+  accentDark: '#7ab889'
+  lineDark: '#6f6f64'
+  cardLineDark: '#6f6f64'
+  bandBgDark: '#e8e6df'
+  bandFgDark: '#1a1a17'
+
+  # Fonts (system fonts only)
+  serifFont: "Georgia, Cambria, 'Times New Roman', Times, serif"
+  sansFont: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+
+readymades:
+
+  classic:
+    name: 'Classic'
+    description: 'The original Soloprint look: warm paper, dark ink, and a green accent.'
+    settings:
+      kicker: 'A short field guide'
+      title: 'Typemill'
+      tagline: 'Six essays on doing fewer things, at a pace that lets you notice what you are doing.'
+      startButtonLabel: 'Start reading'
+      startButtonLink: ''
+      secondButtonLabel: 'Order the book'
+      secondButtonLink: '#order'
+      authorLabel: 'Written by'
+      authorName: 'John'
+      headerbutton: true
+      headerbuttonLabel: 'Order'
+      headerbuttonLink: '#order'
+      bottompager: true
+      darkmodebutton: true
+      breadcrumb: true
+      footerLine: 'Also available as a printed edition, $22.'
+      footerLink1Label: 'Download PDF'
+      footerLink1Url: '#'
+      footerLink2Label: 'Download ePub'
+      footerLink2Url: '#'
+      footerLink3Label: 'Order print'
+      footerLink3Url: '#'
+      paper: '#f5f3ec'
+      paperRaised: '#ebe7da'
+      cardBg: '#fefdfa'
+      ink: '#21211c'
+      inkSoft: '#6b6a5f'
+      accent: '#3c5a45'
+      line: '#8d8877'
+      cardLine: '#F2F2F2'
+      bandBg: '#21211c'
+      bandFg: '#f5f3ec'
+      paperDark: '#1a1a17'
+      paperRaisedDark: '#242420'
+      cardBgDark: '#20201c'
+      inkDark: '#e8e6df'
+      inkSoftDark: '#99968a'
+      accentDark: '#7ab889'
+      lineDark: '#6f6f64'
+      cardLineDark: '#6f6f64'
+      bandBgDark: '#e8e6df'
+      bandFgDark: '#1a1a17'
+      serifFont: "Georgia, Cambria, 'Times New Roman', Times, serif"
+      sansFont: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+
+  coastal:
+    name: 'Coastal'
+    description: 'A fresh, colorful palette with ocean-blue accents on a cool paper background.'
+    settings:
+      kicker: 'A coastal edition'
+      title: 'Soloprint Coastal'
+      tagline: 'A bright, colorful reading experience inspired by sea and sky.'
+      startButtonLabel: 'Start reading'
+      startButtonLink: ''
+      secondButtonLabel: 'Learn more'
+      secondButtonLink: '#order'
+      authorLabel: 'Written by'
+      authorName: 'Author Name'
+      headerbutton: true
+      headerbuttonLabel: 'Join'
+      headerbuttonLink: '#join'
+      bottompager: true
+      darkmodebutton: true
+      breadcrumb: true
+      footerLine: 'Also available as a printed edition.'
+      footerLink1Label: 'Download PDF'
+      footerLink1Url: '#'
+      footerLink2Label: 'Download ePub'
+      footerLink2Url: '#'
+      footerLink3Label: 'Order print'
+      footerLink3Url: '#'
+      paper: '#eef2f3'
+      paperRaised: '#dfe5e7'
+      cardBg: '#f6f9fa'
+      ink: '#1b2830'
+      inkSoft: '#5e737d'
+      accent: '#0077be'
+      line: '#8096a1'
+      cardLine: '#90a6b1'
+      bandBg: '#0077be'
+      bandFg: '#eef2f3'
+      paperDark: '#0f1a20'
+      paperRaisedDark: '#162630'
+      cardBgDark: '#0b1419'
+      inkDark: '#e4edf1'
+      inkSoftDark: '#8ea5ad'
+      accentDark: '#4db8ff'
+      lineDark: '#3d5562'
+      cardLineDark: '#3d5562'
+      bandBgDark: '#4db8ff'
+      bandFgDark: '#0f1a20'
+      serifFont: "Georgia, Cambria, 'Times New Roman', Times, serif"
+      sansFont: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+
+  midnightReader:
+    name: 'Midnight Reader'
+    description: 'A deep, low-light palette with warm amber accents for focused night reading.'
+    settings:
+      kicker: 'A night edition'
+      title: 'Soloprint Midnight'
+      tagline: 'A deep, focused reading experience designed for low light.'
+      startButtonLabel: 'Start reading'
+      startButtonLink: ''
+      secondButtonLabel: ''
+      secondButtonLink: ''
+      authorLabel: 'Written by'
+      authorName: 'Author Name'
+      headerbutton: false
+      headerbuttonLabel: 'Order'
+      headerbuttonLink: '#order'
+      bottompager: false
+      darkmodebutton: false
+      breadcrumb: false
+      footerLine: 'Also available as a printed edition.'
+      footerLink1Label: 'Download PDF'
+      footerLink1Url: '#'
+      footerLink2Label: 'Download ePub'
+      footerLink2Url: '#'
+      footerLink3Label: 'Order print'
+      footerLink3Url: '#'
+      paper: '#1e1f24'
+      paperRaised: '#25262c'
+      cardBg: '#1a1b20'
+      ink: '#e8e4dc'
+      inkSoft: '#9a958a'
+      accent: '#d4a373'
+      line: '#5c5d63'
+      cardLine: '#5c5d63'
+      bandBg: '#d4a373'
+      bandFg: '#1a1b20'
+      paperDark: '#121317'
+      paperRaisedDark: '#1a1b20'
+      cardBgDark: '#0f1014'
+      inkDark: '#f2efe8'
+      inkSoftDark: '#a8a399'
+      accentDark: '#eac18f'
+      lineDark: '#4a4b50'
+      cardLineDark: '#4a4b50'
+      bandBgDark: '#eac18f'
+      bandFgDark: '#121317'
+      serifFont: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+      sansFont: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+
+forms:
+  fields:
+
+    landing:
+      type: fieldset
+      legend: 'Landing Page'
+      fields:
+        kicker:
+          type: text
+          label: 'Kicker / Eyebrow'
+          css: 'lg:w-full'
+        title:
+          type: text
+          label: 'Title'
+          css: 'lg:w-full'
+        tagline:
+          type: textarea
+          label: 'Tagline'
+          css: 'lg:w-full'
+        startButtonLabel:
+          type: text
+          label: 'Start Button Label'
+          css: 'lg:w-half'
+        startButtonLink:
+          type: text
+          label: 'Start Button Link'
+          placeholder: '/introduction'
+          css: 'lg:w-half'
+        secondButtonLabel:
+          type: text
+          label: 'Second Button Label'
+          css: 'lg:w-half'
+        secondButtonLink:
+          type: text
+          label: 'Second Button Link'
+          placeholder: '#order'
+          css: 'lg:w-half'
+        authorLabel:
+          type: text
+          label: 'Author Line Prefix'
+          placeholder: 'Written by'
+          css: 'lg:w-full'
+        authorName:
+          type: text
+          label: 'Author Name'
+          placeholder: 'John'
+          css: 'lg:w-full'
+
+    elements:
+      type: fieldset
+      legend: 'Elements'
+      fields:
+        headerbutton:
+          type: checkbox
+          label: 'Header Button'
+          checkboxlabel: 'Show a button in the header'
+        headerbuttonLabel:
+          type: text
+          label: 'Header Button Label'
+          placeholder: 'order'
+          css: 'lg:w-half'      
+        headerbuttonLink:
+          type: text
+          label: 'Header Button Link'
+          placeholder: 'https://typemill.net'
+          css: 'lg:w-half'
+        breadcrumb:
+          type: checkbox
+          label: 'Breadcrumb'
+          checkboxlabel: 'Show a breadcrumb above each page title'
+        bottompager:
+          type: checkbox
+          label: 'Bottom Pager'
+          checkboxlabel: 'Show a next page element at the bottom of the page'
+        darkmodebutton:
+          type: checkbox
+          label: 'Dark Mode Toggle'
+          checkboxlabel: 'Show the dark mode switch in the header'
+
+    colors:
+      type: fieldset
+      legend: 'Colors'
+      fields:
+        paper:
+          type: text
+          label: 'Page Background'
+          placeholder: '#f5f3ec'
+          css: 'lg:w-half'
+        paperRaised:
+          type: text
+          label: 'Raised Surface'
+          placeholder: '#ebe7da'
+          css: 'lg:w-half'
+        cardBg:
+          type: text
+          label: 'Card Background'
+          placeholder: '#fefdfa'
+          css: 'lg:w-half'
+        ink:
+          type: text
+          label: 'Text Color'
+          placeholder: '#21211c'
+          css: 'lg:w-half'
+        inkSoft:
+          type: text
+          label: 'Muted Text'
+          placeholder: '#6b6a5f'
+          css: 'lg:w-half'
+        accent:
+          type: text
+          label: 'Accent / Hover'
+          placeholder: '#3c5a45'
+          css: 'lg:w-half'
+        line:
+          type: text
+          label: 'Border / Rule'
+          placeholder: '#8d8877'
+          css: 'lg:w-half'
+        cardLine:
+          type: text
+          label: 'Card Border'
+          placeholder: '#98927f'
+          css: 'lg:w-half'
+        bandBg:
+          type: text
+          label: 'Next Band Background'
+          placeholder: '#21211c'
+          css: 'lg:w-half'
+        bandFg:
+          type: text
+          label: 'Next Band Foreground'
+          placeholder: '#f5f3ec'
+          css: 'lg:w-half'
+
+    darkColors:
+      type: fieldset
+      legend: 'Dark Mode Colors'
+      fields:
+        paperDark:
+          type: text
+          label: 'Dark Page Background'
+          placeholder: '#1a1a17'
+          css: 'lg:w-half'
+        paperRaisedDark:
+          type: text
+          label: 'Dark Raised Surface'
+          placeholder: '#242420'
+          css: 'lg:w-half'
+        cardBgDark:
+          type: text
+          label: 'Dark Card Background'
+          placeholder: '#20201c'
+          css: 'lg:w-half'
+        inkDark:
+          type: text
+          label: 'Dark Text Color'
+          placeholder: '#e8e6df'
+          css: 'lg:w-half'
+        inkSoftDark:
+          type: text
+          label: 'Dark Muted Text'
+          placeholder: '#99968a'
+          css: 'lg:w-half'
+        accentDark:
+          type: text
+          label: 'Dark Accent / Hover'
+          placeholder: '#7ab889'
+          css: 'lg:w-half'
+        lineDark:
+          type: text
+          label: 'Dark Border / Rule'
+          placeholder: '#6f6f64'
+          css: 'lg:w-half'
+        cardLineDark:
+          type: text
+          label: 'Dark Card Border'
+          placeholder: '#6f6f64'
+          css: 'lg:w-half'
+        bandBgDark:
+          type: text
+          label: 'Dark Next Band Background'
+          placeholder: '#e8e6df'
+          css: 'lg:w-half'
+        bandFgDark:
+          type: text
+          label: 'Dark Next Band Foreground'
+          placeholder: '#1a1a17'
+          css: 'lg:w-half'
+
+    fonts:
+      type: fieldset
+      legend: 'Fonts'
+      fields:
+        serifFont:
+          type: text
+          label: 'Serif Font Stack'
+          placeholder: "Georgia, Cambria, 'Times New Roman', Times, serif"
+          css: 'lg:w-full'
+        sansFont:
+          type: text
+          label: 'Sans Font Stack'
+          placeholder: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+          css: 'lg:w-full'
+
+    footer:
+      type: fieldset
+      legend: 'Edition Footer'
+      fields:
+        footerLine:
+          type: text
+          label: 'Footer Line'
+          css: 'lg:w-full'
+        footerLink1Label:
+          type: text
+          label: 'Link 1 Label'
+          css: 'lg:w-third'
+        footerLink1Url:
+          type: text
+          label: 'Link 1 URL'
+          css: 'lg:w-two-thirds'
+        footerLink2Label:
+          type: text
+          label: 'Link 2 Label'
+          css: 'lg:w-third'
+        footerLink2Url:
+          type: text
+          label: 'Link 2 URL'
+          css: 'lg:w-two-thirds'
+        footerLink3Label:
+          type: text
+          label: 'Link 3 Label'
+          css: 'lg:w-third'
+        footerLink3Url:
+          type: text
+          label: 'Link 3 URL'
+          css: 'lg:w-two-thirds'

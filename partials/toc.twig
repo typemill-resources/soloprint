@@ -1,0 +1,12 @@
+{% import 'partials/toclist.twig' as toclist %}
+
+<div class="toc-backdrop" id="toc-backdrop" aria-hidden="true"></div>
+<nav class="toc-panel rule-left ph3 pv4 overflow-y-scroll" id="toc-panel" aria-labelledby="toc-heading">
+	<div class="toc-header flex items-center justify-between mb4">
+		<h2 class="font-serif fw5 f5 mt1 mb0" id="toc-heading">{{ theme.contents | default('Contents') | e }}</h2>
+		<button class="icon-btn pa2 pointer" id="toc-close" aria-label="Close contents">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+		</button>
+	</div>
+	{{ toclist.render(navigation, 0, 10, false, false) }}
+</nav>

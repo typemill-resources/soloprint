@@ -1,0 +1,36 @@
+{# The global layout for all pages #}
+{% extends 'layout.twig' %}
+
+{# Short alias for the soloprint theme settings #}
+{% set theme = settings.themes.soloprint %}
+
+{# Short alias for standard meta information from metatabs #}
+{% set meta = metatabs.meta %}
+
+{# Page Title: Meta Title + Website Title #}
+{% block title %}
+	{% if home %}{{ settings.title | e }}{% else %}{{ title | e }} — {{ settings.title | e }}{% endif %}
+{% endblock %}
+
+{# Include the right page type #}
+{% block content %}
+
+	{% if home %}
+
+		{% include 'pages/landing.twig' %}
+
+	{% elseif item.elementType == 'file' %}
+
+		{% include 'pages/chapter.twig' %}
+
+	{% elseif item.elementType == 'folder' %}
+
+		{% include 'pages/folder.twig' %}
+
+	{% else %}
+
+		{% include 'pages/chapter.twig' %}
+
+	{% endif %}
+
+{% endblock %}

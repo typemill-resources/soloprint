@@ -1,0 +1,61 @@
+{% include 'partials/topbar.twig' %}
+{% include 'partials/toc.twig' %}
+
+<div class="page-wrap ph3-m pt5-m ph3-l pt5-l">
+	<main class="page-card card-bg card-rule br1 mw8 center ph4 pv5" id="main">
+
+		{% if item.prevItem %}
+			<a href="{{ item.prevItem.urlAbs | e('html_attr') }}" aria-label="Previous page: {{ item.prevItem.name | e('html_attr') }}" class="no-print sidepager sidepager-left no-underline">
+				<div class="pager-arrow no-print f3 f2-m f2-l" aria-hidden="true">‹</div>
+			</a>
+		{% endif %}
+
+		{% if item.nextItem %}
+			<a href="{{ item.nextItem.urlAbs | e('html_attr') }}" aria-label="Next page: {{ item.nextItem.name | e('html_attr') }}" class="no-print sidepager sidepager-right no-underline">
+				<div class="pager-arrow no-print f3 f2-m f2-l" aria-hidden="true">›</div>
+			</a>
+		{% endif %}
+
+		<article class="center">
+
+			{% if theme.breadcrumb %}
+
+				{% include 'partials/breadcrumb.twig' %}
+
+			{% endif %}
+
+			<h1 class="mt3 mb5">{{ title | e }}</h1>
+			<div class="prose">
+				{{ content | raw }}
+			</div>
+		</article>
+
+		{% if item.folderContent|length > 0 %}
+			<div class="folder-list mt5 pt4 rule-top">
+				<h2 class="font-serif fw5 f4 ma0 mb3">Contents</h2>
+				<ul class="toc-list ma0 pa0">
+					{% for subpage in item.folderContent %}
+						<li class="rule-bottom">
+<a class="flex items-baseline justify-between gap3 pv3 f5 no-underline" href="{{ subpage.urlAbs | e('html_attr') }}">
+							<span class="toc-num f6 flex-none">{{ '%02d'|format(loop.index) }}</span>
+							<span class="toc-title flex-auto">{{ subpage.name | e }}</span>
+						</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+	</main>
+</div>
+
+{% if item.nextItem and theme.bottompager %}
+	<a class="next-band db mt5-m mt5-l" href="{{ item.nextItem.urlAbs | e('html_attr') }}">
+		<div class="next-band-inner mw8 center ph3 pv5 flex items-center justify-between gap4">
+			<div class="next-band-text">
+				<span class="label db f6 mb2">Next chapter</span>
+				<span class="title font-serif f3 fw5">{{ item.nextItem.name | e }}</span>
+			</div>
+			<span class="next-band-icon flex-none flex items-center f2" aria-hidden="true">›</span>
+		</div>
+	</a>
+{% endif %}
