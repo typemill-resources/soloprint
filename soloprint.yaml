@@ -3,6 +3,7 @@ version: 1.0.0
 description: 'Soloprint is a minimal, book-like theme for a single publication.'
 author: Typemill
 homepage: https://typemill.net
+repo: https://github.com/typemill-resources/soloprint
 license: MAKER
 
 settings:
