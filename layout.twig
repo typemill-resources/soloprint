@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ settings.langattr | default('en') | e('html_attr') }}" data-theme="light">
+<html lang="{{ settings.langattr | default('en') | e('html_attr') }}" data-theme="{{ settings.themes.soloprint.darkmodedefault ? 'dark' : 'light' }}">
 <head>
 	<script>
 		(function() {

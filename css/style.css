@@ -238,6 +238,45 @@ body.toc-open .toc-panel {
 	transition: transform .25s ease;
 }
 
+/* Visible, grabbable scrollbar for the navigation panel */
+.toc-panel {
+	scrollbar-width: thin;
+	scrollbar-color: var(--line) transparent;
+	overscroll-behavior: contain;
+}
+
+.toc-panel::-webkit-scrollbar {
+	width: 10px;
+}
+
+.toc-panel::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.toc-panel::-webkit-scrollbar-thumb {
+	background: var(--line);
+	border-radius: 5px;
+	border: 2px solid var(--card-bg);
+}
+
+.toc-panel::-webkit-scrollbar-thumb:hover {
+	background: var(--ink-soft);
+}
+
+/* Collapsible folders in the navigation */
+.toc-folder-toggle svg {
+	width: 16px;
+	height: 16px;
+	transition: transform .2s ease;
+}
+
+.toc-item.open > .toc-row .toc-folder-toggle svg {
+	transform: rotate(90deg);
+}
+
+.toc-sublist { display: none; }
+.toc-item.open > .toc-sublist { display: block; }
+
 .page-card {
 	position: relative;
 	box-shadow: 0 1px 2px rgba(20,18,10,.04), 0 20px 40px -28px rgba(20,18,10,.25);
@@ -249,9 +288,6 @@ body.toc-open .toc-panel {
 	bottom: 0;
 	width: 10%;
 	z-index: 10;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 .sidepager:hover,
@@ -265,7 +301,10 @@ body.toc-open .toc-panel {
 .pager-arrow {
 	position: sticky;
 	top: 50%;
+	transform: translateY(-50%);
 	pointer-events: none;
+	display: flex;
+	justify-content: center;
 }
 
 article { max-width: var(--content); }

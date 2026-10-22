@@ -1,10 +1,10 @@
 name: Soloprint
-version: 1.0.0
+version: 1.1.0
 description: 'Soloprint is a minimal, book-like theme for a single publication.'
 author: Typemill
 homepage: https://typemill.net
 repo: https://github.com/typemill-resources/soloprint
-license: MAKER
+license: MIT
 
 settings:
   # Landing page copy
@@ -24,6 +24,8 @@ settings:
   headerbuttonLink: '#order'
   bottompager: true
   darkmodebutton: true
+  darkmodedefault: false
+  collapsiblenav: false
 
   # Edition footer strip
   footerLine: 'Also available as a printed edition, $22.'
@@ -82,6 +84,8 @@ readymades:
       headerbuttonLink: '#order'
       bottompager: true
       darkmodebutton: true
+      darkmodedefault: false
+      collapsiblenav: true
       breadcrumb: true
       footerLine: 'Also available as a printed edition, $22.'
       footerLink1Label: 'Download PDF'
@@ -131,6 +135,8 @@ readymades:
       headerbuttonLink: '#join'
       bottompager: true
       darkmodebutton: true
+      darkmodedefault: false
+      collapsiblenav: false
       breadcrumb: true
       footerLine: 'Also available as a printed edition.'
       footerLink1Label: 'Download PDF'
@@ -180,6 +186,8 @@ readymades:
       headerbuttonLink: '#order'
       bottompager: false
       darkmodebutton: false
+      darkmodedefault: true
+      collapsiblenav: false
       breadcrumb: false
       footerLine: 'Also available as a printed edition.'
       footerLink1Label: 'Download PDF'
@@ -209,6 +217,57 @@ readymades:
       bandBgDark: '#eac18f'
       bandFgDark: '#121317'
       serifFont: "'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif"
+      sansFont: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+
+  festival:
+    name: 'Festival'
+    description: 'A vivid, playful palette with bold colors and a bright editorial character.'
+    settings:
+      kicker: 'A colorful edition'
+      title: 'Soloprint Festival'
+      tagline: 'A lively reading experience with bold colors and a playful editorial spirit.'
+      startButtonLabel: 'Start reading'
+      startButtonLink: ''
+      secondButtonLabel: 'Learn more'
+      secondButtonLink: '#order'
+      authorLabel: 'Written by'
+      authorName: 'Author Name'
+      headerbutton: true
+      headerbuttonLabel: 'Join'
+      headerbuttonLink: '#join'
+      bottompager: true
+      darkmodebutton: true
+      darkmodedefault: false
+      collapsiblenav: false
+      breadcrumb: true
+      footerLine: 'Also available as a printed edition.'
+      footerLink1Label: 'Download PDF'
+      footerLink1Url: '#'
+      footerLink2Label: 'Download ePub'
+      footerLink2Url: '#'
+      footerLink3Label: 'Order print'
+      footerLink3Url: '#'
+      paper: '#fff7e8'
+      paperRaised: '#ffe5b4'
+      cardBg: '#fffdf7'
+      ink: '#2b1d3b'
+      inkSoft: '#745b7d'
+      accent: '#e83e8c'
+      line: '#f0a23a'
+      cardLine: '#f5c16c'
+      bandBg: '#5b2a86'
+      bandFg: '#fff7e8'
+      paperDark: '#21152d'
+      paperRaisedDark: '#332044'
+      cardBgDark: '#291a35'
+      inkDark: '#fff3df'
+      inkSoftDark: '#c8a9c9'
+      accentDark: '#ff6fae'
+      lineDark: '#8f65a8'
+      cardLineDark: '#754f8e'
+      bandBgDark: '#ffca3a'
+      bandFgDark: '#21152d'
+      serifFont: "Georgia, Cambria, 'Times New Roman', Times, serif"
       sansFont: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
 
 forms:
@@ -289,6 +348,14 @@ forms:
           type: checkbox
           label: 'Dark Mode Toggle'
           checkboxlabel: 'Show the dark mode switch in the header'
+        darkmodedefault:
+          type: checkbox
+          label: 'Dark Mode Default'
+          checkboxlabel: 'Default to dark mode for visitors who have not chosen a mode yet'
+        collapsiblenav:
+          type: checkbox
+          label: 'Collapsible Navigation'
+          checkboxlabel: 'Let visitors expand and collapse folders in the navigation'
 
     colors:
       type: fieldset

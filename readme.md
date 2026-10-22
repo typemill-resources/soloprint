@@ -85,3 +85,12 @@ Select a readymade in the Typemill theme settings to apply its colors and copy i
 ## How to Use
 
 Download the theme, unzip it, and place it in the `/themes` folder of your Typemill installation. Then configure and activate the theme in the Typemill theme settings.
+
+## Changelog
+
+### Version 1.1.0
+
+* Make soloprint theme free
+* Fix pager
+* dark-mode default option
+* collapsible navigation (all off by default).

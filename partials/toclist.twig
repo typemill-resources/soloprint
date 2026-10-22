@@ -1,21 +1,33 @@
-{% macro render(navigation, depth = 0, limit = 10, numbered = false, showmeta = false) %}
+{% macro render(navigation, depth = 0, limit = 10, numbered = false, showmeta = false, collapsible = false) %}
 	{% import _self as macros %}
 
 	{% if limit > depth %}
-		<ul class="toc-list ma0 pa0">
+		<ul class="toc-list ma0 pa0{% if collapsible and depth > 0 %} toc-sublist{% endif %}">
 			{% for element in navigation %}
-				<li class="toc-item{% if element.active %} current{% endif %}">
-					<a class="toc-link level-{{depth}} flex items-baseline gap2 no-underline pv3 f5" href="{{ element.urlAbs | e('html_attr') }}" style="padding-left: {{ depth * 1.25 }}rem;"{% if element.active %} aria-current="page"{% endif %}>
-						{% if numbered and depth == 0 %}
-							<span class="toc-num flex-none">{{ '%02d'|format(loop.index) }}</span>
-						{% endif %}
-						<span class="toc-title flex-auto">{{ element.name | e }}</span>
-						{% if showmeta and element.elementType == 'folder' and element.folderContent|length > 0 %}
-							<span class="toc-meta f7 ink-soft flex-none">{{ element.folderContent|length }} items</span>
-						{% endif %}
-					</a>
-					{% if element.folderContent|length > 0 %}
-						{{ macros.render(element.folderContent, depth + 1, limit, numbered, showmeta) }}
+				{% set hasChildren = element.folderContent|length > 0 and limit > depth + 1 %}
+				{% set isFolder = collapsible and hasChildren %}
+				{% set isOpen = element.active or element.activeParent %}
+				<li class="toc-item{% if element.active %} current{% endif %}{% if isFolder %} toc-folder{% if isOpen %} open{% endif %}{% endif %}">
+					{% if isFolder %}
+					<div class="toc-row flex items-stretch">
+					{% endif %}
+						<a class="toc-link level-{{depth}} flex items-baseline gap2 no-underline pv3 f5{% if isFolder %} flex-auto{% endif %}" href="{{ element.urlAbs | e('html_attr') }}" style="padding-left: {{ depth * 1.25 }}rem;"{% if element.active %} aria-current="page"{% endif %}>
+							{% if numbered and depth == 0 %}
+								<span class="toc-num flex-none">{{ '%02d'|format(loop.index) }}</span>
+							{% endif %}
+							<span class="toc-title flex-auto">{{ element.name | e }}</span>
+							{% if showmeta and element.elementType == 'folder' and element.folderContent|length > 0 %}
+								<span class="toc-meta f7 ink-soft flex-none">{{ element.folderContent|length }} items</span>
+							{% endif %}
+						</a>
+					{% if isFolder %}
+						<button type="button" class="toc-folder-toggle icon-btn pa2 pointer flex-none flex items-center" aria-expanded="{{ isOpen ? 'true' : 'false' }}" aria-label="{{ ('Toggle subpages for ' ~ element.name) | e('html_attr') }}">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false"><polyline points="9 6 15 12 9 18"/></svg>
+						</button>
+					</div>
+					{% endif %}
+					{% if hasChildren %}
+						{{ macros.render(element.folderContent, depth + 1, limit, numbered, showmeta, collapsible) }}
 					{% endif %}
 				</li>
 			{% endfor %}

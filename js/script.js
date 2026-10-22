@@ -43,6 +43,21 @@
 		tocClose.addEventListener('click', closeToc);
 	}
 
+	if (tocPanel) {
+		tocPanel.addEventListener('click', function(e) {
+			var toggle = e.target.closest('.toc-folder-toggle');
+			if (!toggle) {
+				return;
+			}
+			var item = toggle.closest('.toc-item');
+			if (!item) {
+				return;
+			}
+			var isOpen = item.classList.toggle('open');
+			toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+		});
+	}
+
 	document.addEventListener('keydown', function(e) {
 		if (e.key === 'Escape' && document.body.classList.contains('toc-open')) {
 			closeToc();
