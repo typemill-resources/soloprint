@@ -90,7 +90,7 @@ Download the theme, unzip it, and place it in the `/themes` folder of your Typem
 
 ### Version 1.1.0
 
-* Make soloprint theme free
+* Make soloprint theme free with MIT-license
 * Fix pager
 * dark-mode default option
 * collapsible navigation (all off by default).
